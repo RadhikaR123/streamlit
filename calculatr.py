@@ -1,6 +1,7 @@
 import streamlit as st
 import codecs
 import streamlit.components.v1 as stc
+import simple_calculator as sc
 
 
 
@@ -16,8 +17,8 @@ with st.sidebar:
 
 
 if choice == "simple":
-    st.subheader("Use this simple calculator")
-    st_calculator("/home/navgurukul/Documents/streamlit/calculator.html")
+    st.header("Use this simple calculator")
+    st_calculator("/home/navgurukul/Documents/streamlit/calculator.html", width=700, height=700)
 elif choice == "advanced":
     st.subheader("You will be able to use this feature soon.... :smile:")
 else:

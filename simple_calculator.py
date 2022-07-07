@@ -1,69 +1,76 @@
 
-from pyrsistent import b
+from textwrap import indent
 import streamlit as st
-import csv
+import json
+import pandas as pd
 
-def add(a,b):
-    return a+b
-
-def subtraction(a,b):
-    return a-b
-
-def mult(a,b):
-    return a*b
-
-def division(a,b):
-    return a/b
-
-header = ["first_number","second_number","operation","answer"]
-f= open('history.csv',"a",encoding ='UTF8') 
-writer = csv.writer(f)
-writer.writerow(header)
-
+dic ={}
 col1, col2 = st.columns(2)
 
-data = []
 with col1:
     number1 = int(st.number_input('Insert first number'))
     # data.append(number1)
+    st.session_state["first_number"]= number1
+    dic["num1"]=st.session_state["first_number"]
+    # st.write(st.session_state)
 
 with col2:
     number2 = int(st.number_input('Insert second number'))
     # data.append(number2)
+    st.session_state["numbre2"]= number2
+    dic["num2"]=st.session_state["numbre2"]
+    # st.write(st.session_state)
+
+button1 = st.button("+")
+if button1:
+    st.write("your answer is",number1+number2)
+    st.session_state['operation']="additoin"
+    st.session_state["answer"]= number1+number2
+    dic["operatio"]=st.session_state["operation"]
+    dic["ans"]=st.session_state["answer"]
 
 
-if st.button('+'):
-    data = [number1,number2,"+",number1+number2]
-    st.write("your answer is :",add(number1,number2))
-    if len(data) ==4:
-        writer.writerow(data)
-    else:
-        pass
-
-    
-# elif st.button('-'):
-#     st.write("your answer is :",subtraction(number1,number2))
-#     data.append("-")
-#     data.append(number1-number2)
-
-# elif st.button('*'):
-#     st.write("your answer is :",mult(number1,number2))
-#     data.append("*")
-#     data.append(number1*number2)
+button2 = st.button("-")
+if button2:
+    st.write("your answer is",number1-number2)
+    st.session_state['operation']="subtraction"
+    st.session_state["answer"]= number1-number2
 
 
-# elif st.button('/'):
-#     st.write("your answer is :",division(number1,number2))
-#     data.append("/")
-#     data.append(number1/number2)
+button3 = st.button("*")
+if button3:
+    st.write("your answer is",number1*number2)
+    st.session_state['operation']="Multiplication"
+    st.session_state["answer"]= number1*number2
 
-print(data)
+button = st.button("/")
+if button:
+    st.write("your answer is",number1/number2)
+    st.session_state['operation']="divide"
+    st.session_state["answer"]= number1/number2
+
+
+button5= st.button("history")
+if button5:
+    st.write(st.session_state)
 
 
 
 
+dic2={}
+if len(dic)==4:
+    dic2.update(dic)
+else:
+    pass
+
+with open("state.json","a") as f:
+    json.dump(dic2,f,indent=2)
 
 
+datafram = st.button("press")
+
+if datafram:
+    st.dataframe(st.session_state)
 
         
 

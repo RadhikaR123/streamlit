@@ -1,0 +1,31 @@
+{}{}{}{
+  "num1": 20,
+  "num2": 20,
+  "operatio": "additoin",
+  "ans": 40
+}{}{}{}{}{
+  "num1": 20,
+  "num2": 40,
+  "operatio": "additoin",
+  "ans": 60
+}{}{}{}{}{
+  "num1": 23,
+  "num2": 43,
+  "operatio": "additoin",
+  "ans": 66
+}{}{}{}{}{}{
+  "num1": 23,
+  "num2": 45,
+  "operatio": "additoin",
+  "ans": 68
+}{}{}{}{}{}{}{}{}{
+  "num1": 12,
+  "num2": 12,
+  "operatio": "additoin",
+  "ans": 24
+}{}{}{}{}{}{
+  "num1": 12,
+  "num2": 23,
+  "operatio": "additoin",
+  "ans": 35
+}{}{}{}

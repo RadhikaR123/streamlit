@@ -5,10 +5,10 @@ import simple_calculator as sc
 
 
 
-# def st_calculator(cal_html, width=700,height=700):
-#     calc_file = codecs.open(cal_html,"r")
-#     page = calc_file.read()
-#     stc.html(page,width = width, height = height, scrolling = True)
+def st_calculator(cal_html, width=700,height=700):
+    calc_file = codecs.open(cal_html,"r")
+    page = calc_file.read()
+    stc.html(page,width = width, height = height, scrolling = True)
 
 
 with st.sidebar:
@@ -18,8 +18,7 @@ with st.sidebar:
 
 if choice == "simple":
     st.header("Use this simple calculator")
-    sc
-    # st_calculator("/home/navgurukul/Documents/streamlit/calculator.html", width=700, height=700)
+    st_calculator("/home/navgurukul/Documents/streamlit/calculator.html", width=700, height=700)
 elif choice == "advanced":
     st.subheader("You will be able to use this feature soon.... :smile:")
 else:

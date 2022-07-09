@@ -1,5 +1,5 @@
-first_number,second_number,operation,answer
-first_number,second_number,operation,answer
-first_number,second_number,operation,answer
-first_number,second_number,operation,answer
-first_number,second_number,operation,answer
+,num1,num2,op
+0,12.0,12.0,+
+1,115.0,100.0,+
+2,67.0,23.0,+
+3,90.0,90.0,+

@@ -6,9 +6,21 @@ import csv
 import matplotlib.pyplot as plt
 from datetime import date, datetime
 
-st.title("Welcome to my app")
+
+
 
 current_date = date.today()
+
+now = datetime.now()
+
+current_time = now.strftime("%H:%M:%S")
+
+st.title("Welcome to my app")
+st.write("Date -",current_date)
+st.write("time - ", current_time)
+
+
+
 with st.sidebar:
     st.header("weather update")
     choice = st.selectbox("select location",('select city',"Pune","Delhi","Banglore"),0)
@@ -16,8 +28,7 @@ with st.sidebar:
 if choice== "Pune":
     st.title("Pune city weather")
     st.write("current weather report")
-    st.write("Date -",current_date)
-
+    
     col1, col2, col3 = st.columns(3)
 
 

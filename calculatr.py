@@ -9,7 +9,7 @@ def st_calculator(cal_html, width=700,height=700):
     calc_file = codecs.open(cal_html,"r")
     page = calc_file.read()
     stc.html(page,width = width, height = height, scrolling = True)
-
+    
 
 with st.sidebar:
     st.title("Menu baar")
